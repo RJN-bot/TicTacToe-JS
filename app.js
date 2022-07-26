@@ -6,7 +6,7 @@ const player = (name) => {
 }
 
 const gameBoard = (() => {
-    let board = ['x', 'o', 'x', 'x', 'o', 'x', 'o', 'x', 'o'];
+    let board = ['o', 'o', 'x', 'x', 'o', 'x', 'o', 'x', 'o'];
     for (let i = 0; i < 9; i++) {
         const boardCell = (() => {
             const cell = document.createElement('div')
@@ -16,23 +16,36 @@ const gameBoard = (() => {
         })();
     }
 
-    function addMarks() {
+    (function addMarks() {
         let currentMove = 0;
-        if (currenMove % 2 === 0) {
-            function addXMark() {
-                document.querySelector('.cell').addEventListener('click', function () {
-                    this.textContent = 'x'
-                })
+        const cellArr = document.querySelectorAll('.cell')
+        const addXMark = (() => {
+            const markChanger = ((cell) => {
+                cell.addEventListener('click',
+                    function () {
+                        currentMove % 2 === 0 ? this.textContent = 'x' : this.textContent = 'o'
+                        console.log(this)
+                        console.log('BRUHHHHH');
+                        currentMove++;
+                    })
+            });
 
+
+            for (let i = 0; i < cellArr.length; i++) {
+                markChanger(cellArr[i])
             }
+
+
+        })();
+        return {
+            addXMark
         }
-
-    }
-
+    })();
 
     return {
-        board, addMarks
+        board
     }
+
 })();
 
 const displayController = (() => {
