@@ -1,0 +1,31 @@
+body {
+    height: 100%;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.board {
+    width: 40vw;
+    height: 40vw;
+    background-color: burlywood;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    /* padding: 2rem; */
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    background-color: white;
+}
