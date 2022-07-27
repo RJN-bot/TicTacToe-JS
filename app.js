@@ -18,8 +18,15 @@ const gameBoard = (() => {
             const markChanger = ((cell) => {
                 cell.addEventListener('click',
                     function () {
+                        const cellContentAdder = (value) => {
+                            console.log(this)
+                            this.textContent = value
+                            let signClass = ''
+                            value == 1 ? signClass = 'cross' : signClass = 'circle'
+                            this.classList.add(signClass)
+                        }
                         if (this.textContent == '') {
-                            currentMove % 2 === 0 ? this.textContent = 'x' : this.textContent = 'o'
+                            currentMove % 2 === 0 ? cellContentAdder(1) : cellContentAdder(0)
                             currentMove++;
                         }
                         else {
@@ -37,7 +44,7 @@ const gameBoard = (() => {
         }
     })();
     return {
-        board
+
     }
 })();
 
@@ -53,5 +60,12 @@ const displayController = (() => {
 //  Should check for 3 -in -a - row and a tie.
 
 const gameChecker = () => {
+    const winningCombos = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]
+    ]
+
+    // cell > img(width 80 %) - cross & - circle
+
+
 
 }
