@@ -6,13 +6,10 @@ const player = (name) => {
 }
 
 const gameBoard = (() => {
-    let board = ['o', 'o', 'x', 'x', 'o', 'x', 'o', 'x', 'o'];
     for (let i = 0; i < 9; i++) {
-        const boardCell = (() => {
-            const cell = document.createElement('div')
-            cell.classList.add('cell');
-            document.querySelector('.board').appendChild(cell)
-        })();
+        const cell = document.createElement('div')
+        cell.classList.add('cell');
+        document.querySelector('.board').appendChild(cell)
     }
     (function addMarks() {
         let currentMove = 0;
@@ -50,3 +47,11 @@ const displayController = (() => {
 
     }
 })();
+
+
+// Build the logic that checks for when the game is over!
+//  Should check for 3 -in -a - row and a tie.
+
+const gameChecker = () => {
+
+}
