@@ -9,6 +9,7 @@ const gameBoard = (() => {
     for (let i = 0; i < 9; i++) {
         const cell = document.createElement('div')
         cell.classList.add('cell');
+        cell.textContent = ' '
         document.querySelector('.board').appendChild(cell)
     }
     (function addMarks() {
@@ -25,27 +26,40 @@ const gameBoard = (() => {
                             value == 1 ? signClass = 'cross' : signClass = 'circle'
                             this.classList.add(signClass)
                         }
-                        if (this.textContent == '') {
+                        if (this.textContent == ' ') {
                             currentMove % 2 === 0 ? cellContentAdder(1) : cellContentAdder(0)
                             currentMove++;
                         }
                         else {
                             alert('That move is invalid')
                         }
-
+                        gameChecker()
                     })
             });
             for (let i = 0; i < cellArr.length; i++) {
                 markChanger(cellArr[i])
             }
         })();
+
+        const gameChecker = (() => {
+            const winningCombos = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]
+            ]
+            for (let i = 0; i < cellArr.length; i++) {
+                console.log(cellArr[i].textContent)
+            }
+
+        })
+
+        while (1 = 3) {
+
+        }
+
+
         return {
             addXMark
         }
     })();
-    return {
-
-    }
 })();
 
 const displayController = (() => {
@@ -55,17 +69,6 @@ const displayController = (() => {
     }
 })();
 
-
 // Build the logic that checks for when the game is over!
 //  Should check for 3 -in -a - row and a tie.
 
-const gameChecker = () => {
-    const winningCombos = [
-        [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]
-    ]
-
-    // cell > img(width 80 %) - cross & - circle
-
-
-
-}
