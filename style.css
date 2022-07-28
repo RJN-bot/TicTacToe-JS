@@ -1,3 +1,5 @@
+/* https://colorpalettes.net/color-palette-4472/ */
+
 body {
     height: 100%;
     background: rgb(145, 191, 188);
@@ -7,6 +9,7 @@ body {
 
 h1 {
     text-align: center;
+    color: #2c3537;
 }
 
 .container {
@@ -17,11 +20,9 @@ h1 {
 .board {
     width: calc(40vw + 1rem);
     height: calc(40vw + 1rem);
-    /* background-color: burlywood; */
     display: grid;
     gap: 0.5rem;
     grid-template-columns: repeat(3, 1fr);
-    /* padding: 2rem; */
     position: absolute;
     left: 50%;
     top: 50%;
@@ -32,10 +33,27 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3rem;
-    /* background-color: none; */
+    font-size: 0rem;
+    /* font-size: 3rem; */
     background-color: #738a905f;
     cursor: pointer;
     width: calc(40vw/3);
     height: calc(40vw/3);
 }
+
+
+.cross {
+    background-image: url(./assets/cross-sign.svg);
+    background-size: contain;
+    /* background: no-repeat; */
+    /* width: 80%; */
+    /* height: 80%; */
+}
+
+
+.circle {
+    background-image: url(./assets/circle-sign.svg);
+    background-size: contain;
+}
+
+/* cell > img (width 80%) - cross & - circle */
