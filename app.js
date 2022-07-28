@@ -47,7 +47,6 @@ const gameBoard = (() => {
             ]
             let winningCombosEachArr = (() => {
                 for (let i = 0; i < winningCombos.length; i++) {
-                    winningCombos[i]
                 }
             })()
 
@@ -56,7 +55,22 @@ const gameBoard = (() => {
             const markPositionGetter = (() => {
                 for (let i = 0; i < cellArr.length; i++) {
                     markArr.push(cellArr[i].textContent)
-
+                    let xArr = [];
+                    let oArr = [];
+                    const xoArrCreator = () => {
+                        for (let i = 0; i < markArr.length; i++) {
+                            if (markArr[i] == 1) {
+                                xArr.push(i)
+                            }
+                            if (markArr[i] == 0) {
+                                oArr.push(i)
+                            }
+                        }
+                    }
+                    xoArrCreator()
+                    if (winningCombos.includes(xArr)) {
+                        alert('bhbksnkasj')
+                    }
                 }
                 // const positionOfMark = () => {
                 // }
@@ -64,17 +78,8 @@ const gameBoard = (() => {
 
             })()
 
-            if (markArr.includes(winningCombosEachArr)) {
-                alert('bhbksnkasj')
-            }
 
         })
-
-        // while (1 = 3) {
-
-        // }
-
-
         return {
             addXMark
         }
