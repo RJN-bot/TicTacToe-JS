@@ -12,8 +12,10 @@ const gameBoard = (() => {
         cell.textContent = ' '
         document.querySelector('.board').appendChild(cell)
     }
+
     (function addMarks() {
         let currentMove = 0;
+        let winner = 'lol'
         const cellArr = document.querySelectorAll('.cell')
         const addXMark = (() => {
             const markChanger = ((cell) => {
@@ -34,6 +36,15 @@ const gameBoard = (() => {
                             alert('That move is invalid')
                         }
                         gameChecker()
+
+                        if (winner === 'x') {
+                            alert('X won')
+                        }
+
+                        if (winner === 'o') {
+                            alert('O won')
+                        }
+
                     })
             });
             for (let i = 0; i < cellArr.length; i++) {
@@ -51,7 +62,29 @@ const gameBoard = (() => {
                 markArr.push(cellArr[i].textContent)
             }
             console.log(markArr);
-            
+
+            let xArr = [];
+            let oArr = [];
+            for (let i = 0; i < markArr.length; i++) {
+                if (markArr[i] === '1') {
+                    xArr.push(i)
+                    // console.log(`xArr: ${xArr}`);
+                }
+                if (markArr[i] === '0') {
+                    oArr.push(i)
+                    // console.log(`oArr: ${oArr}`);
+                }
+                for (arr of winningCombos) {
+                    let checker = (array, target) => target.every(v => array.includes(v));
+                    if (checker(xArr, arr)) {
+                        winner = 'x'
+                    }
+                    if (checker(oArr, arr)) {
+                        winner = 'o'
+                    }
+                }
+
+            }
 
 
 
