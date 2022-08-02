@@ -18,8 +18,8 @@ h1 {
 }
 
 .board {
-    width: calc(40vw + 1rem);
-    height: calc(40vw + 1rem);
+    width: calc(500px + 1rem);
+    height: calc(500px + 1rem);
     display: grid;
     gap: 0.5rem;
     grid-template-columns: repeat(3, 1fr);
@@ -37,8 +37,8 @@ h1 {
     /* font-size: 3rem; */
     background-color: #738a905f;
     cursor: pointer;
-    width: calc(40vw/3);
-    height: calc(40vw/3);
+    width: calc(500px/3);
+    height: calc(500px/3);
 }
 
 
