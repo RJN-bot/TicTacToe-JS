@@ -36,13 +36,18 @@ const gameBoard = (() => {
                             alert('That move is invalid')
                         }
                         gameChecker()
-
+                        const winOverlay = document.querySelector('.win-overlay')
+                        const winMessage = document.querySelector('.win-msg')
                         if (winner === 'x') {
-                            alert('X won')
+                            winMessage.textContent = 'X won'
+                            winOverlay.style.display = 'flex'
                         }
 
                         if (winner === 'o') {
-                            alert('O won')
+                            winMessage.textContent = 'O won'
+                            winOverlay.style.display = 'flex'
+
+
                         }
 
                     })
