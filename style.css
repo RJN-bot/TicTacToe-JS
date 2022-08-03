@@ -65,7 +65,7 @@ h1 {
     background-color: rgba(44, 53, 55, 0.8);
     top: 0px;
     left: 0px;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
 }
